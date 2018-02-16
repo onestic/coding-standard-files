@@ -1,18 +1,13 @@
 {
     "name": "onestic/coding-standard-files",
     "description": "Required files for Onestic coding standard configuration",
+    "homepage": "https://github.com/onestic/coding-standard-files",
     "type": "library",
     "authors": [
         {
             "name": "Jesús Plou",
             "email": "jplou@onestic.com"
         }
-    ],
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/onestic/grumphp"
-      }
     ],
     "require": {}
 }
