@@ -1,6 +1,6 @@
 parameters:
     git_dir: .
-    bin_dir: ~/.composer/vendor/bin
+    bin_dir: ~/.config/composer/vendor/bin
     ascii:
         failed: ~/coding-standard-files/grumphp/grumphp-grumpy.txt
         succeeded: ~/coding-standard-files/grumphp/grumphp-happy.txt

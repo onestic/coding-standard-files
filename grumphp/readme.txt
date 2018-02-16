@@ -4,7 +4,10 @@
 composer global require phpro/grumphp
 composer global update phpro/grumphp
 
-add export PATH="$HOME/.composer/vendor/bin:$PATH" to .bashrc
+add
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+to .bashrc
 
 # Install tasks - https://github.com/phpro/grumphp/blob/master/doc/tasks.md
 
@@ -16,6 +19,8 @@ composer global require --dev phpmd/phpmd
 
 - php code sniffer - https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md
 composer global require --dev squizlabs/php_codesniffer
+
+composer global require --dev sebastian/phpcpd
 
 
 # Commands - https://github.com/phpro/grumphp/blob/master/doc/commands.md
