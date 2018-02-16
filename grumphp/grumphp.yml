@@ -1,0 +1,15 @@
+parameters:
+    git_dir: .
+    bin_dir: ~/.config/composer/vendor/bin
+    ascii:
+        failed: ~/coding-standard-files/grumphp/grumphp-grumpy.txt
+        succeeded: ~/coding-standard-files/grumphp/grumphp-happy.txt
+    tasks:
+        php7cc: ~
+        phpcs:
+            standard: "~/coding-standard/Ecg"
+            show_warnings: false
+        phpmd:
+            ruleset: ['cleancode', 'codesize', 'naming']
+            triggered_by: ['php']
+        phpcpd: ~
