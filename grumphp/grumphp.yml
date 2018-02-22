@@ -7,9 +7,8 @@ parameters:
     tasks:
         php7cc: ~
         phpcs:
-            standard: "../../coding-standard/Ecg"
+            standard: "tools/coding-standard/Ecg"
             show_warnings: false
         phpmd:
-            ruleset: ['cleancode', 'codesize', 'naming']
+            ruleset: ['codesize', 'naming']
             triggered_by: ['php']
-        phpcpd: ~
