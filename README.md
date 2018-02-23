@@ -1,4 +1,4 @@
-#Coding Standard Files
+# Coding Standard Files
 This repository has files to use for code validation in PhpStorm and in Magento projects.
  
 * Load _PhpStorm-settings-codings-standards.jar_ from "File > Import Settings..." option.
@@ -23,7 +23,7 @@ npm install eslint --save-dev
 
 ## Errors installing management
 
-###PhpStorm - Configure Node.js and NPM
+### PhpStorm - Configure Node.js and NPM
 https://www.jetbrains.com/help/phpstorm/2016.2/using-javascript-code-quality-tools.html#installESLint
 https://stackoverflow.com/questions/36223947/webstorm-error-please-specify-npm-package#36261165
 
