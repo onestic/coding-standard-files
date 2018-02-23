@@ -34,3 +34,49 @@ npm install eslint-plugin-node
 npm install eslint-plugin-standard
 npm install ...
 ```
+
+## Update composer.json in Magento projects
+
+Until Onestic repositories be updated, they'll be loaded from github url.
+
+mnsami/composer-custom-directory-installer is used to add repo files to /tools folder with "installer-paths" extra params.
+
+phpro/grumphp is added to check code before commit it config file is loaded as config-default-path param says.
+
+sstalle/php7cc, squizlabs/php_codesniffer and phpmd/phpmd are added for use by grumphp.
+
+So add this params to composer.json:
+
+```json
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/onestic/coding-standard.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/onestic/coding-standard-files.git"
+    }
+  ],
+  "require": {
+    "mnsami/composer-custom-directory-installer": "1.1.*",
+    "onestic/coding-standard": "dev-master",
+    "onestic/coding-standard-files": "dev-master"
+  },
+  "require-dev": {
+    "phpro/grumphp": "^0.13.1",
+    "sstalle/php7cc": "1.2.*",
+    "squizlabs/php_codesniffer": "3.2.*",
+    "phpmd/phpmd": "2.6.*"
+  },
+  "extra": {
+    "installer-paths": {
+      "./tools/grumphp/": ["phpro/grumphp"],
+      "./tools/coding-standard/": ["onestic/coding-standard"],
+      "./tools/coding-standard-files/": ["onestic/coding-standard-files"]
+    },
+    "grumphp": {
+      "config-default-path": "tools/coding-standard-files/grumphp/grumphp.yml"
+    }
+  },
+```
