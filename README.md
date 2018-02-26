@@ -80,3 +80,11 @@ So add this params to composer.json:
     }
   },
 ```
+
+## Grumphp
+
+Tool for validating your code before commit it to repository.
+
+Complete info in:
+
+https://github.com/phpro/grumphp
