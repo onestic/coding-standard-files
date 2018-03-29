@@ -5,7 +5,6 @@ parameters:
         failed: tools/coding-standard-files/grumphp/grumphp-grumpy.txt
         succeeded: tools/coding-standard-files/grumphp/grumphp-happy.txt
     tasks:
-        php7cc: ~
         phpcs:
             standard: "tools/coding-standard/Ecg"
             show_warnings: false
