@@ -1,19 +1,19 @@
-# Coding Standard Files
+# Coding Standard Files #
 This repository has files to use for code validation in PhpStorm and in Magento projects.
  
 * Load _PhpStorm-settings-codings-standards.jar_ from "File > Import Settings..." option.
 * Load _PhpStorm-php-code-style.xml_ from "File > Default Settings... / Settings..." and "Editor > Code Style > Import Scheme > Intellij IDEA code style XML"   
 
 
-## Code sniffer & Mess detector
+## Code sniffer & Mess detector ##
 You'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
 ```shell
 sudo apt-get install php7.0 php7.0-xml -y
 ```
 
-## ESLint & JSHint
+## ESLint & JSHint ##
 
-### Install Node.js and NPM
+### Install Node.js and NPM ###
 From https://www.npmjs.com/package/eslint
 
 ```shell
@@ -21,9 +21,9 @@ sudo apt-get install npm
 npm install eslint --save-dev
 ```
 
-## Errors installing management
+## Errors installing management ##
 
-### PhpStorm - Configure Node.js and NPM
+### PhpStorm - Configure Node.js and NPM ###
 https://www.jetbrains.com/help/phpstorm/2016.2/using-javascript-code-quality-tools.html#installESLint
 https://stackoverflow.com/questions/36223947/webstorm-error-please-specify-npm-package#36261165
 
@@ -35,7 +35,7 @@ npm install eslint-plugin-standard
 npm install ...
 ```
 
-## Update composer.json in Magento projects
+## Update composer.json in Magento projects ##
 
 Until Onestic repositories be updated, they'll be loaded from github url.
 
@@ -65,7 +65,6 @@ So add this params to composer.json:
   },
   "require-dev": {
     "phpro/grumphp": "^0.13.1",
-    "sstalle/php7cc": "1.2.*",
     "squizlabs/php_codesniffer": "3.2.*",
     "phpmd/phpmd": "2.6.*"
   },
@@ -81,10 +80,22 @@ So add this params to composer.json:
   },
 ```
 
-## Grumphp
+## Grumphp ##
+
+https://github.com/phpro/grumphp
 
 Tool for validating your code before commit it to repository.
 
-Complete info in:
+### Basic usage ###
 
-https://github.com/phpro/grumphp
+Sniff commits
+
+```shell
+grumphp git:init
+```
+
+Stop sniffing commits
+
+```shell
+grumphp git:deinit
+```
