@@ -6,8 +6,8 @@ parameters:
         succeeded: tools/coding-standard-files/grumphp/grumphp-happy.txt
     tasks:
         phpcs:
-            standard: "tools/coding-standard/Ecg"
-            show_warnings: false
+            standard: 'tools/coding-standard/Ecg'
+            ignore_patterns: ['tools', 'vendor']
         phpmd:
             ruleset: ['codesize', 'naming']
-            triggered_by: ['php']
+            ignore_patterns: ['tools', 'vendor']
