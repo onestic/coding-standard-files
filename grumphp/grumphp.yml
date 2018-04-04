@@ -10,4 +10,4 @@ parameters:
             ignore_patterns: ['tools', 'vendor']
         phpmd:
             ruleset: ['codesize', 'naming']
-            ignore_patterns: ['tools', 'vendor']
+            exclude: ['tools', 'vendor']
