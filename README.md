@@ -43,7 +43,7 @@ mnsami/composer-custom-directory-installer is used to add repo files to /tools f
 
 phpro/grumphp is added to check code before commit it config file is loaded as config-default-path param says.
 
-sstalle/php7cc, squizlabs/php_codesniffer and phpmd/phpmd are added for use by grumphp.
+squizlabs/php_codesniffer and phpmd/phpmd are added for use by grumphp.
 
 So add this params to composer.json:
 
