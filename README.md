@@ -58,12 +58,10 @@ So add this params to composer.json:
       "url": "https://github.com/onestic/coding-standard-files.git"
     }
   ],
-  "require": {
+  "require-dev": {
     "mnsami/composer-custom-directory-installer": "1.1.*",
     "onestic/coding-standard": "dev-master",
-    "onestic/coding-standard-files": "dev-master"
-  },
-  "require-dev": {
+    "onestic/coding-standard-files": "dev-master",
     "phpro/grumphp": "^0.13.1",
     "squizlabs/php_codesniffer": "3.2.*",
     "phpmd/phpmd": "2.6.*"
