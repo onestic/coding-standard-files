@@ -78,6 +78,14 @@ So add this params to composer.json:
   },
 ```
 
+And also remember to add this tools subfolders to project's .gitignore file:
+
+```
+tools/grumphp
+tools/coding-standard
+tools/coding-standard-files
+```
+
 ## Grumphp ##
 
 https://github.com/phpro/grumphp
