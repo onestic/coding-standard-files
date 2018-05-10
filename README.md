@@ -62,13 +62,12 @@ So add this params to composer.json:
     "mnsami/composer-custom-directory-installer": "1.1.*",
     "onestic/coding-standard": "dev-master",
     "onestic/coding-standard-files": "dev-master",
-    "phpro/grumphp": "^0.13.1",
-    "squizlabs/php_codesniffer": "3.2.*",
-    "phpmd/phpmd": "2.6.*"
+    "phpmd/phpmd": "2.6.*",    
+    "phpro/grumphp": "^0.14.0",    
+    "squizlabs/php_codesniffer": "3.2.*"
   },
   "extra": {
     "installer-paths": {
-      "./tools/grumphp/": ["phpro/grumphp"],
       "./tools/coding-standard/": ["onestic/coding-standard"],
       "./tools/coding-standard-files/": ["onestic/coding-standard-files"]
     },
@@ -81,7 +80,6 @@ So add this params to composer.json:
 And also remember to add this tools subfolders to project's .gitignore file:
 
 ```
-tools/grumphp
 tools/coding-standard
 tools/coding-standard-files
 ```
