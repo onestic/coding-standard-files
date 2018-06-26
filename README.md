@@ -1,9 +1,11 @@
 # Coding Standard Files #
+
 This repository has files to use for code validation in PhpStorm and in Magento projects.
  
 * Load _PhpStorm-settings-codings-standards.jar_ from "File > Import Settings..." option.
 * Load _PhpStorm-php-code-style.xml_ from "File > Default Settings... / Settings..." and "Editor > Code Style > Import Scheme > Intellij IDEA code style XML"   
 
+Please check [Onestic Coding Standard](doc/onestic-coding-standards.md) document for more info about Onestic Standards.
 
 ## Code sniffer & Mess detector ##
 You'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
