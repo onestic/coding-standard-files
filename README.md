@@ -1,11 +1,30 @@
 # Coding Standard Files #
 This repository has files to use for code validation in PhpStorm and in Magento projects.
- 
-* Load _PhpStorm-settings-codings-standards.jar_ from "File > Import Settings..." option.
-* Load _PhpStorm-php-code-style.xml_ from "File > Default Settings... / Settings..." and "Editor > Code Style > Import Scheme > Intellij IDEA code style XML"   
 
+You'll need to clone this repository and https://github.com/onestic/coding-standard to your user root folder (/home/[your-user]/).
+ 
+* Load _PhpStorm-settings-codings-standards.jar_ from _"File > Import Settings..."_ option.
+* Load _PhpStorm-php-code-style.xml_ from _"File > Default Settings... / Settings..."_ and _"Editor > Code Style > Import Scheme > Intellij IDEA code style XML"_
 
 ## Code sniffer & Mess detector ##
+
+After load PhpStorm settings files you'll have enabled and configured Code Sniffer and Mess Detector to check your code.
+
+Check configuration in _"Settings > Editor > Inspections > Php"_ and check this:
+
+In Code Sniffer config, _"Coding Standard"_ is set to "Custom"_ value and in file selector modal, ruleset.xml file path is set to _/home/[your-user]/coding-standard/Ecg/ruleset.xml_
+
+![Code Sniffer config](PhpStorm-settings-code-sniffer.png)
+  
+In Mess Detector config, check setted options are: 
+- Code Size Rules
+- Design Rules
+- Unused Code Rules
+
+![Mess Detector config](PhpStorm-settings-mess-detector.png)
+
+To enable them in already created PhpStorm project
+
 You'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
 ```shell
 sudo apt-get install php7.0 php7.0-xml -y
