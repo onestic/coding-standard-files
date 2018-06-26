@@ -6,6 +6,8 @@ You'll need to clone this repository and https://github.com/onestic/coding-stand
 * Load _PhpStorm-settings-codings-standards.jar_ from _"File > Import Settings..."_ option.
 * Load _PhpStorm-php-code-style.xml_ from _"File > Default Settings... / Settings..."_ and _"Editor > Code Style > Import Scheme > Intellij IDEA code style XML"_
 
+Please check [Onestic Coding Standard](doc/onestic-coding-standards.md) document for more info about Onestic Standards.
+
 ## Code sniffer & Mess detector ##
 
 After load PhpStorm settings files you'll have enabled and configured Code Sniffer and Mess Detector to check your code.
