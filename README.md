@@ -8,11 +8,11 @@ You'll need to clone this repository and https://github.com/onestic/coding-stand
 
 Please check [Onestic Coding Standard](doc/onestic-coding-standards.md) document for more info about Onestic Standards.
 
-## Code sniffer & Mess detector ##
+## Code sniffer & Mess detector configurations ##
 
 After load PhpStorm settings files you'll have enabled and configured Code Sniffer and Mess Detector to check your code.
 
-Check configuration in _"Settings > Editor > Inspections > Php"_ and check this:
+To check both sniffers are installed correctly, or to enable them in already created PhpStorm project, check configuration in _"Settings > Editor > Inspections > Php"_ and check this options:
 
 In Code Sniffer config, _"Coding Standard"_ is set to "Custom"_ value and in file selector modal, ruleset.xml file path is set to _/home/[your-user]/coding-standard/Ecg/ruleset.xml_
 
@@ -24,8 +24,6 @@ In Mess Detector config, check setted options are:
 - Unused Code Rules
 
 ![Mess Detector config](PhpStorm-settings-mess-detector.png)
-
-To enable them in already created PhpStorm project
 
 You'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
 ```shell
