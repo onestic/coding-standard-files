@@ -56,6 +56,8 @@ Avoid ":" and "end;" for opening an closing structures.
 
 Avoid use of ternary operators for check conditions.
 
+Always return a variable instead of results of operations.
+
 
 #### Non standard code ####
 
@@ -74,7 +76,9 @@ Avoid use of ternary operators for check conditions.
     $anotherOneExampleParam = $this->getParam('anotherOneExample');
     
     if ($anotherOneExampleParam > 10)
-        $anotherOneVar = false;    
+        $anotherOneVar = false;
+        
+    return (!$anotherExampleParam != $someVar)     
         
 
 #### Standard code ####
@@ -98,4 +102,12 @@ Avoid use of ternary operators for check conditions.
     if ($anotherOneExampleParam > 10) {
         $anotherOneVar = false;
     }
+    
+    $validSomeVar = false;
+    
+    if ($anotherExampleParam == $someVar) {
+        $validSomeVar = false;
+    }
+    
+    return ($validSomeVar);
     
