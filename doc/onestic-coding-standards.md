@@ -106,7 +106,7 @@ Always return a variable instead of results of operations.
     $validSomeVar = false;
     
     if ($anotherExampleParam == $someVar) {
-        $validSomeVar = false;
+        $validSomeVar = true;
     }
     
     return ($validSomeVar);
