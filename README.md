@@ -1,29 +1,47 @@
 # Coding Standard Files #
 This repository has files to use for code validation in PhpStorm and in Magento projects.
 
-You'll need to clone this repository and https://github.com/onestic/coding-standard to your user root folder (/home/[your-user]/).
- 
-* Load _PhpStorm/PhpStorm-settings-codings-standards.jar_ from _"File > Import Settings..."_ option.
-* Load _PhpStorm/PhpStorm-php-code-style.xml_ from _"File > Default Settings... / Settings..."_ and _"Editor > Code Style > Import Scheme > Intellij IDEA code style XML"_
-
 Please check [Onestic Coding Standard](doc/onestic-coding-standards.md) document for more info about Onestic Standards.
 
-## Code sniffer & Mess detector configurations ##
+For applying most of defined format rules in PhpStorm, load _PhpStorm/PhpStorm-php-code-style.xml_ from _"File > Default Settings... / Settings..."_ and _"Editor > Code Style > Import Scheme > Intellij IDEA code style XML"_
 
-After load PhpStorm settings files you'll have enabled and configured Code Sniffer and Mess Detector to check your code.
+This repositorty has Code Sniffer and Mess Detector recompiled phar files in bin/ folder in order to check phtml file in PhpStorm and Grumphp.
 
-To check both sniffers are installed correctly, or to enable them in already created PhpStorm project, check configuration in _"Settings > Editor > Inspections > Php"_ and check this options:
+## Index
 
-In Code Sniffer config, _"Coding Standard"_ is set to "Custom"_ value and in file selector modal, ruleset.xml file path is set to _/home/[your-user]/coding-standard/Ecg/ruleset.xml_
+* [CS & MD in PhpStorm](#code-sniffer--mess-detector-configurations-in-phpstorm)
 
-![Code Sniffer config](PhpStorm/PhpStorm-settings-code-sniffer.png)
+* [ESLint & JSHint](#eslint--jshint)
+
+* [Grumphp](#grumphp)
+
+* [Update composer.json in Magento projects](#update-composerjson-in-magento-projects)
+
+* [Roadmap](#roadmap)
+
+## Code Sniffer & Mess Detector configurations in PhpStorm ##
+
+First you have to enable CS and MD in project configuration in _"Languages & Frameworks > Php > Quality tools"_ and set excutable files from _[project-folder]/vendor/onestic/coding-standard-files/bin/_ folder.
+
+![Code Sniffer config](PhpStorm/PhpStorm-settings-qt-cs.png)
+
+![Mess Detector config](PhpStorm/PhpStorm-settings-qt-md.png)
+
+To set both sniffers check inspector configuration in _"Settings > Editor > Inspections > Php"_ and check this options:
+
+In Code Sniffer config, _"Coding Standard"_ must be set to _"Custom"_ option and in file selector, ruleset.xml file path must be set to _[project-folder]/vendor/onestic/coding-standard/Ecg/ruleset.xml_
+
+![Code Sniffer inspector config](PhpStorm/PhpStorm-inspectors-cs.png)
   
-In Mess Detector config, check setted options are: 
+In Mess Detector config, check set options are:
+ 
 - Code Size Rules
+
 - Design Rules
+
 - Unused Code Rules
 
-![Mess Detector config](PhpStorm/PhpStorm-settings-mess-detector.png)
+![Mess Detector inspector config](PhpStorm/PhpStorm-inspectors-md.png)
 
 You'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
 ```shell
@@ -40,8 +58,6 @@ sudo apt-get install npm
 npm install eslint --save-dev
 ```
 
-## Errors installing management ##
-
 ### PhpStorm - Configure Node.js and NPM ###
 https://www.jetbrains.com/help/phpstorm/2016.2/using-javascript-code-quality-tools.html#installESLint
 https://stackoverflow.com/questions/36223947/webstorm-error-please-specify-npm-package#36261165
@@ -52,55 +68,6 @@ npm install eslint-plugin-import
 npm install eslint-plugin-node
 npm install eslint-plugin-standard
 npm install ...
-```
-
-## Update composer.json in Magento projects ##
-
-Until Onestic repositories be updated, they'll be loaded from github url.
-
-mnsami/composer-custom-directory-installer is used to add repo files to /tools folder with "installer-paths" extra params.
-
-phpro/grumphp is added to check code before commit it config file is loaded as config-default-path param says.
-
-squizlabs/php_codesniffer and phpmd/phpmd are added for use by grumphp.
-
-So add this params to composer.json:
-
-```json
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/onestic/coding-standard.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/onestic/coding-standard-files.git"
-    }
-  ],
-  "require-dev": {
-    "mnsami/composer-custom-directory-installer": "1.1.*",
-    "onestic/coding-standard": "dev-master",
-    "onestic/coding-standard-files": "dev-master",
-    "phpmd/phpmd": "2.6.*",    
-    "phpro/grumphp": "^0.14.0",    
-    "squizlabs/php_codesniffer": "3.2.*"
-  },
-  "extra": {
-    "installer-paths": {
-      "./tools/coding-standard/": ["onestic/coding-standard"],
-      "./tools/coding-standard-files/": ["onestic/coding-standard-files"]
-    },
-    "grumphp": {
-      "config-default-path": "tools/coding-standard-files/grumphp/grumphp.yml"
-    }
-  },
-```
-
-And also remember to add this tools subfolders to project's .gitignore file:
-
-```
-tools/coding-standard
-tools/coding-standard-files
 ```
 
 ## Grumphp ##
@@ -122,3 +89,39 @@ Stop sniffing commits
 ```shell
 grumphp git:deinit
 ```
+
+## Update composer.json in Magento projects ##
+
+Until Onestic repositories be updated, they'll be loaded from github url.
+
+phpro/grumphp is added to check code before commit it config file is loaded as config-default-path param says.
+
+
+So add this params to composer.json:
+
+```json
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/onestic/coding-standard.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/onestic/coding-standard-files.git"
+    }
+  ],
+  "require-dev": {
+    "onestic/coding-standard": "dev-master",
+    "onestic/coding-standard-files": "dev-master",
+    "phpro/grumphp": "^0.14.0",    
+  },
+  "extra": {
+    "grumphp": {
+      "config-default-path": "vendor/onestic/coding-standard-files/grumphp/grumphp.yml"
+    }
+  },
+```
+
+## Roadmap ##
+
+Please check [Onestic Coding Standard](doc/roadmap.md)
