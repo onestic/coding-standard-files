@@ -17,7 +17,7 @@ This repositorty has Code Sniffer and Mess Detector recompiled phar files in bin
 
 * [Update composer.json in Magento projects](#update-composerjson-in-magento-projects)
 
-* [Roadmap](#roadmap)
+* [Roadmap](doc/roadmap.md)
 
 ## Code Sniffer & Mess Detector configurations in PhpStorm ##
 
@@ -29,11 +29,13 @@ First you have to enable CS and MD in project configuration in _"Languages & Fra
 
 To set both sniffers check inspector configuration in _"Settings > Editor > Inspections > Php"_ and check this options:
 
-In Code Sniffer config, _"Coding Standard"_ must be set to _"Custom"_ option and in file selector, ruleset.xml file path must be set to _[project-folder]/vendor/onestic/coding-standard/Ecg/ruleset.xml_
+1 - In Code Sniffer config, _"Coding Standard"_ option must be set to _"Custom"_ and in file selector, ruleset.xml file path must be set to _[project-folder]/vendor/onestic/coding-standard/Ecg/ruleset.xml_
+
+As in new option _"Check files with extension"_ there's no option to check phtml files,  __all file extensions must be unchecked__ in order to let custom phpcs phar file check php and phtml files.
 
 ![Code Sniffer inspector config](PhpStorm/PhpStorm-inspectors-cs.png)
   
-In Mess Detector config, check set options are:
+2 - In Mess Detector config, check set options are:
  
 - Code Size Rules
 
@@ -121,7 +123,3 @@ So add this params to composer.json:
     }
   },
 ```
-
-## Roadmap ##
-
-Please check [Onestic Coding Standard](doc/roadmap.md)
