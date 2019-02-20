@@ -1,70 +1,29 @@
 # Coding Standard Files #
 This repository has files to use for code validation in PhpStorm and in Magento projects.
 
-You'll need to clone this repository and https://github.com/onestic/coding-standard to your user root folder (/home/[your-user]/).
- 
-* Load _PhpStorm-settings-codings-standards.jar_ from _"File > Import Settings..."_ option.
-* Load _PhpStorm-php-code-style.xml_ from _"File > Default Settings... / Settings..."_ and _"Editor > Code Style > Import Scheme > Intellij IDEA code style XML"_
-
 Please check [Onestic Coding Standard](doc/onestic-coding-standards.md) document for more info about Onestic Standards.
 
-## Code sniffer & Mess detector configurations ##
+For applying most of defined format rules in PhpStorm, load _PhpStorm/PhpStorm-php-code-style.xml_ from _"File > Default Settings... / Settings..."_ and _"Editor > Code Style > Import Scheme > Intellij IDEA code style XML"_
 
-After load PhpStorm settings files you'll have enabled and configured Code Sniffer and Mess Detector to check your code.
+Note this repository has Code Sniffer and Mess Detector recompiled phar files in bin/ folder in order to check phtml files in PhpStorm and Grumphp.
 
-To check both sniffers are installed correctly, or to enable them in already created PhpStorm project, check configuration in _"Settings > Editor > Inspections > Php"_ and check this options:
+## Index
 
-In Code Sniffer config, _"Coding Standard"_ is set to "Custom"_ value and in file selector modal, ruleset.xml file path is set to _/home/[your-user]/coding-standard/Ecg/ruleset.xml_
+* [Update composer.json in Magento projects](#update-composerjson-in-magento-projects)
 
-![Code Sniffer config](PhpStorm-settings-code-sniffer.png)
-  
-In Mess Detector config, check setted options are: 
-- Code Size Rules
-- Design Rules
-- Unused Code Rules
+* [CS & MD in PhpStorm](#code-sniffer--mess-detector-configurations-in-phpstorm)
 
-![Mess Detector config](PhpStorm-settings-mess-detector.png)
+* [Grumphp](#grumphp)
 
-You'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
-```shell
-sudo apt-get install php7.0 php7.0-xml -y
-```
+* [ESLint & JSHint](#eslint--jshint)
 
-## ESLint & JSHint ##
+* [Application cases](#application-cases-for-coding-standards)
 
-### Install Node.js and NPM ###
-From https://www.npmjs.com/package/eslint
-
-```shell
-sudo apt-get install npm
-npm install eslint --save-dev
-```
-
-## Errors installing management ##
-
-### PhpStorm - Configure Node.js and NPM ###
-https://www.jetbrains.com/help/phpstorm/2016.2/using-javascript-code-quality-tools.html#installESLint
-https://stackoverflow.com/questions/36223947/webstorm-error-please-specify-npm-package#36261165
-
-Fixing specific errors
-```shell
-npm install eslint-plugin-import
-npm install eslint-plugin-node
-npm install eslint-plugin-standard
-npm install ...
-```
+* [Roadmap](doc/roadmap.md)
 
 ## Update composer.json in Magento projects ##
 
-Until Onestic repositories be updated, they'll be loaded from github url.
-
-mnsami/composer-custom-directory-installer is used to add repo files to /tools folder with "installer-paths" extra params.
-
-phpro/grumphp is added to check code before commit it config file is loaded as config-default-path param says.
-
-squizlabs/php_codesniffer and phpmd/phpmd are added for use by grumphp.
-
-So add this params to composer.json:
+This Coding Standards currently apply on Magento 1 projects, so they have been loaded in composer.json project: 
 
 ```json
   "repositories": [
@@ -78,36 +37,64 @@ So add this params to composer.json:
     }
   ],
   "require-dev": {
-    "mnsami/composer-custom-directory-installer": "1.1.*",
     "onestic/coding-standard": "dev-master",
-    "onestic/coding-standard-files": "dev-master",
-    "phpmd/phpmd": "2.6.*",    
-    "phpro/grumphp": "^0.14.0",    
-    "squizlabs/php_codesniffer": "3.2.*"
-  },
-  "extra": {
-    "installer-paths": {
-      "./tools/coding-standard/": ["onestic/coding-standard"],
-      "./tools/coding-standard-files/": ["onestic/coding-standard-files"]
-    },
-    "grumphp": {
-      "config-default-path": "tools/coding-standard-files/grumphp/grumphp.yml"
-    }
+    "onestic/coding-standard-files": "dev-master"
   },
 ```
 
-And also remember to add this tools subfolders to project's .gitignore file:
+## Code Sniffer (CS) & Mess Detector (MD) configurations in PhpStorm ##
 
-```
-tools/coding-standard
-tools/coding-standard-files
+First you have to enable CS and MD in project configuration in _"Languages & Frameworks > Php > Quality tools"_ and set executable files from _[project-folder]/vendor/bin/_ folder.
+
+![Code Sniffer config](PhpStorm/PhpStorm-settings-qt-cs.png)
+
+![Mess Detector config](PhpStorm/PhpStorm-settings-qt-md.png)
+
+In old PhpStorm versions, CS and MD configurations are managed from _"Php > Code Sniffer"_ and _"Php > Mess Detector"_ options.
+
+
+To set both sniffers check inspector configuration in _"Settings > Editor > Inspections > Php"_ and check this options:
+
+1 - In Code Sniffer config, _"Coding Standard"_ option must be set to _"Custom"_ and in file selector, ruleset.xml file path must be set to _[project-folder]/vendor/onestic/coding-standard/Ecg/ruleset.xml_
+
+As in new option _"Check files with extension"_ there's no option to check phtml files,  __all file extensions must be unchecked__ in order to let custom phpcs phar file check php and phtml files (old PhpStorm versions doesn't have this extension options).
+
+![Code Sniffer inspector config](PhpStorm/PhpStorm-inspectors-cs.png)
+  
+2 - In Mess Detector config, check set options are:
+ 
+- Code Size Rules
+
+- Design Rules
+
+- Unused Code Rules
+
+![Mess Detector inspector config](PhpStorm/PhpStorm-inspectors-md.png)
+
+Maybe you'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
+```shell
+sudo apt-get install php7.0 php7.0-xml -y
 ```
 
 ## Grumphp ##
 
 https://github.com/phpro/grumphp
 
-Tool for validating your code before commit it to repository.
+Grumphp is a tool for validating your code before commit it to repository.
+
+Before installing, add this config to composer.json project:
+
+```json
+  "extra": {
+    "grumphp": {
+      "config-default-path": "vendor/onestic/coding-standard-files/grumphp/grumphp.yml"
+    }
+  },
+```
+
+Then install it with ```composer require --dev phpro/grumphp```
+
+Remember: phpmd and phpcs bin files used by Grumphp will be our recompiled phar files from this repository.
 
 ### Basic usage ###
 
@@ -122,3 +109,45 @@ Stop sniffing commits
 ```shell
 grumphp git:deinit
 ```
+
+If calling directly to _grumphp_ doesn't work, call it with:
+
+```shell
+vendor/bin/grumphp [command]
+``` 
+
+## ESLint & JSHint ##
+
+ESLint and JSHints validation are in progress of definition, but until then, you can try our current rules: 
+
+### Install Node.js and NPM ###
+From https://www.npmjs.com/package/eslint
+
+```shell
+sudo apt-get install npm
+npm install eslint --save-dev
+```
+
+### PhpStorm - Configure Node.js and NPM ###
+https://www.jetbrains.com/help/phpstorm/2016.2/using-javascript-code-quality-tools.html#installESLint
+https://stackoverflow.com/questions/36223947/webstorm-error-please-specify-npm-package#36261165
+
+Fixing specific errors
+```shell
+npm install eslint-plugin-import
+npm install eslint-plugin-node
+npm install eslint-plugin-standard
+npm install ...
+```
+
+## Application cases for coding standards ##
+
+If you're working in an old project or third party code, maybe you shouldn't apply our coding standards in order to keep consistency in code style. But whenever you can you must clean al mess code you found.
+
+If you're working in a new module you must use all this rules.
+
+If some rules doesn't fit with what you want to do or if you're missing some rules, feel free to PR.
+
+Also you can ask to your teach lead for help working with them :)   
+
+And of course: __Feedback is welcome!__

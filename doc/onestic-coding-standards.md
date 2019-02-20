@@ -52,7 +52,7 @@ Control structures will always have a blank space after and before, except if a 
  
 Always open and close control structures with "{" and "}". Even for 1 line code blocks.
 
-Avoid ":" and "end;" for opening an closing structures.
+Avoid ":" and "end;" for opening an closing structures in php files. They're allowed in phtml files, but CS rules are no set yet and warnings are still showing.
 
 Avoid use of ternary operators for check conditions.
 

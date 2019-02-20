@@ -9,5 +9,9 @@
             "email": "jplou@onestic.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/phpcs",
+        "bin/phpmd"
+    ]
 }
