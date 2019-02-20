@@ -15,9 +15,9 @@ Note this repository has Code Sniffer and Mess Detector recompiled phar files in
 
 * [Grumphp](#grumphp)
 
-* [Application cases](#application-cases-for-coding-standards)
-
 * [ESLint & JSHint](#eslint--jshint)
+
+* [Application cases](#application-cases-for-coding-standards)
 
 * [Roadmap](doc/roadmap.md)
 
