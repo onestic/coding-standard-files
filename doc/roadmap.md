@@ -1,5 +1,7 @@
 # Onestic Coding Standard roadmap
 
+* [Code Sniffer] Test rulesets from https://github.com/magento/marketplace-eqp
+
 * [Grumphp] Define severity for warnings which won't break commit
 
 * [Grumphp] Add commit and branch validations to tasks
