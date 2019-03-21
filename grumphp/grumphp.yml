@@ -10,6 +10,6 @@ parameters:
             triggered_by: ['phtml','php']
             ignore_patterns: ['tools', 'vendor']
         phpmd:
-            ruleset: ['codesize', 'cleancode']
+            ruleset: ['vendor/onestic/coding-standard-files/phpmd/codesize.xml', 'cleancode']
             triggered_by: ['phtml','php']
             exclude: ['tools', 'vendor']
