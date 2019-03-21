@@ -67,7 +67,7 @@ As in new option _"Check files with extension"_ there's no option to check phtml
 
 - Unused Code Rules
 
-Also, set Code Size Rules from our custom ruleset in: _vendor/onestic/coding-standard-files/phpmd/codesize.xml_
+And set Code Size Rules from our custom ruleset in: _[project-folder]/vendor/onestic/coding-standard-files/phpmd/codesize.xml_
 
 ![Mess Detector inspector config](PhpStorm/PhpStorm-inspectors-md.png)
 
