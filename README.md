@@ -63,11 +63,11 @@ As in new option _"Check files with extension"_ there's no option to check phtml
   
 2 - In Mess Detector config, check set options are:
  
-- Code Size Rules
-
 - Design Rules
 
 - Unused Code Rules
+
+Also, set Code Size Rules from our custom ruleset in: _vendor/onestic/coding-standard-files/phpmd/codesize.xml_
 
 ![Mess Detector inspector config](PhpStorm/PhpStorm-inspectors-md.png)
 
