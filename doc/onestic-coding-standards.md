@@ -46,21 +46,29 @@ In array declarations, each element will be in a line ended by comma char (",").
     ];
 
 
-### Control structures ###
+### Control structures and methods ###
 
 Control structures will always have a blank space after and before, except if a control structures is the first element of another structure.
  
 Always open and close control structures with "{" and "}". Even for 1 line code blocks.
 
-Avoid ":" and "end;" for opening an closing structures in php files. They're allowed in phtml files, but CS rules are no set yet and warnings are still showing.
+Alternate syntax for control structures is allowed ONLY in phtml files.
+```php
+<?php
+if ($someCondition === true): ?>
+    <h1>Some condition is true</h1>
+<?php
+endif; ?> 
+```
 
-Avoid use of ternary operators for check conditions.
+Avoid use of ternary operators for check conditions. Think about legibility!
 
 Always return a variable instead of results of operations.
 
 
 #### Non standard code ####
 
+```php
     <?php
     $exampleParam = $this->getParam('example');
     
@@ -78,11 +86,12 @@ Always return a variable instead of results of operations.
     if ($anotherOneExampleParam > 10)
         $anotherOneVar = false;
         
-    return (!$anotherExampleParam != $someVar)     
-        
+    return (!$anotherExampleParam != $someVar);     
+```
 
 #### Standard code ####
 
+```php
     <?php
     $exampleParam = $this->getParam('example');
     
@@ -110,4 +119,4 @@ Always return a variable instead of results of operations.
     }
     
     return ($validSomeVar);
-    
+```

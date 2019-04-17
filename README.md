@@ -57,7 +57,7 @@ To set both sniffers check inspector configuration in _"Settings > Editor > Insp
 
 1 - In Code Sniffer config, _"Coding Standard"_ option must be set to _"Custom"_ and in file selector, ruleset.xml file path must be set to _[project-folder]/vendor/onestic/coding-standard/Ecg/ruleset.xml_
 
-As in new option _"Check files with extension"_ there's no option to check phtml files,  __all file extensions must be unchecked__ in order to let custom phpcs phar file check php and phtml files (old PhpStorm versions doesn't have this extension options).
+In option block _"Check files with extension"_ set value _php,phtml_ for sniffing this files (old PhpStorm versions doesn't have this extension management or have checkboxes to set extensions).
 
 ![Code Sniffer inspector config](PhpStorm/PhpStorm-inspectors-cs.png)
   
@@ -72,6 +72,7 @@ And set Code Size Rules from our custom ruleset in: _[project-folder]/vendor/one
 ![Mess Detector inspector config](PhpStorm/PhpStorm-inspectors-md.png)
 
 Maybe you'll need to install some php packages in your environment to run phar files and read xml files from PhpStorm:
+
 ```shell
 sudo apt-get install php7.0 php7.0-xml -y
 ```
