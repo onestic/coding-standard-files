@@ -9,6 +9,7 @@ parameters:
             standard: 'vendor/onestic/coding-standard/Ecg'
             triggered_by: ['phtml','php']
             ignore_patterns: ['tools', 'vendor']
+            warning_severity: 0
         phpmd:
             ruleset: ['vendor/onestic/coding-standard-files/phpmd/codesize.xml', 'cleancode']
             triggered_by: ['phtml','php']
