@@ -9,9 +9,10 @@
             "email": "jplou@onestic.com"
         }
     ],
-    "require": {},
+    "require": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
     "bin": [
-        "bin/phpcs",
         "bin/phpmd"
     ]
 }
