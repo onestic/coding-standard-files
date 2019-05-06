@@ -11,6 +11,6 @@ parameters:
             ignore_patterns: ['tools', 'vendor']
             warning_severity: 0
         phpmd:
-            ruleset: ['vendor/onestic/coding-standard-files/phpmd/codesize.xml', 'cleancode']
+            ruleset: ['vendor/onestic/coding-standard-files/phpmd/codesize.xml', 'naming', 'unusedcode']
             triggered_by: ['phtml','php']
             exclude: ['tools', 'vendor']
