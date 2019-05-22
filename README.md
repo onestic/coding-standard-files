@@ -23,7 +23,7 @@ Note this repository has Code Sniffer and Mess Detector recompiled phar files in
 
 ## Update composer.json in Magento projects ##
 
-This Coding Standards currently apply on Magento 1 projects, so they have been loaded in composer.json project: 
+This Coding Standards currently apply on Magento 1 projects, so they have been loaded in project's composer.json: 
 
 ```json
   "repositories": [
@@ -63,7 +63,7 @@ In option block _"Check files with extension"_ set value _php,phtml_ for sniffin
   
 2 - In Mess Detector config, check set options are:
  
-- Design Rules
+- Naming Rules
 
 - Unused Code Rules
 
@@ -95,7 +95,29 @@ Before installing, add this config to composer.json project:
 
 Then install it with ```composer require --dev phpro/grumphp```
 
-Remember: phpmd and phpcs bin files used by Grumphp will be our recompiled phar files from this repository.
+Or update project's composer.json with:
+
+```json
+  "require-dev": {
+    ...
+    "phpro/grumphp": "^0.15.0",
+    ...
+  },
+```
+
+**Remember:** Always check defined ruleset files in Grumphp are the same used by PhpStorm:
+
+```yml
+...
+phpcs:
+    standard: 'vendor/onestic/coding-standard/Ecg'
+...
+phpmd:
+    ruleset: ['vendor/onestic/coding-standard-files/phpmd/codesize.xml', 'naming', 'unusedcode']
+... 
+```
+
+**Note:** bin/phpmd pahr file used by Grumphp will be our custom recompiled phar files from this repository.
 
 ### Basic usage ###
 
