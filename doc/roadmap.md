@@ -2,6 +2,8 @@
 
 * [Grumphp] Add commit and branch validations to tasks
 
+* [Mess Detector] Define exceptions for "Avoid really long methods" (i.e: Install scripts)
+
 * [Coding Standards] Set cs and md recompiled phar bin files from forks or check PhpStorm and GrumPhp config to remove them.
 
 * [Code Sniffer] Test official rulesets from https://github.com/magento/magento-coding-standard/releases/tag/1.0.0
