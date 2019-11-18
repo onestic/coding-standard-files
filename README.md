@@ -26,16 +26,6 @@ Note this repository has Code Sniffer and Mess Detector recompiled phar files in
 This Coding Standards currently apply on Magento 1 projects, so they have been loaded in project's composer.json: 
 
 ```json
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/onestic/coding-standard.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/onestic/coding-standard-files.git"
-    }
-  ],
   "require-dev": {
     "onestic/coding-standard": "dev-master",
     "onestic/coding-standard-files": "dev-master"
